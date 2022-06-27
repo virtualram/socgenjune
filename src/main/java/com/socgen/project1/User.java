@@ -6,13 +6,14 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="user1")
-public class User {@javax.persistence.Id @GeneratedValue private String Id;
-private String username;
-private String email;
-  public String getId() {
+public class User {@javax.persistence.Id @GeneratedValue
+	private Integer Id;
+	private String username;
+	private String email;
+  public Integer getId() {
 	return Id;
 }
-public void setId(String id) {
+public void setId(Integer id) {
 	Id = id;
 }
 public String getUsername() {
