@@ -2,8 +2,10 @@ package com.socgen.project1;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="user1")
 public class User {@javax.persistence.Id @GeneratedValue private String Id;
 private String username;
 private String email;
