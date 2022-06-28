@@ -1,7 +1,11 @@
 package com.socgen.project1;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -38,8 +42,14 @@ public class Restapi1 {
        Department dep = new Department();
        dep =deptrep.findByname("finance");
        
-    
-       usr1.setSkills(skillrep.findAll());
+       List<Skills> sks = new ArrayList<Skills>(); 
+    		sks=   skillrep.findAll();
+  
+    		
+    		
+    		 
+    		usr1.setSkills(sks); 
+ 
 		usr1.setDept(dep);
 		usrrep.save(usr1);
 		return usr1;

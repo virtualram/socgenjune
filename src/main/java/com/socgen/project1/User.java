@@ -1,30 +1,39 @@
 package com.socgen.project1;
 
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="user1")
-public class User {@javax.persistence.Id @GeneratedValue
+public class User {
+@javax.persistence.Id @GeneratedValue
 	private Integer Id;
 	private String username;
 	private String email;
-	@ManyToMany(targetEntity=Skills.class)
+
+	@OneToMany(targetEntity=Skills.class)
+	@JoinColumn(name = "fk_skills")
+	private List<Skills> skills;
+
 	
-	private List skills;
 	
 	
-	public List getSkills() {
+
+	
+	public List<Skills> getSkills() {
 		return skills;
 	}
-	public void setSkills(List skills) {
+	public void setSkills(List<Skills> skills) {
 		this.skills = skills;
 	}
 	@OneToOne
