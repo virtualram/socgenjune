@@ -1,7 +1,12 @@
 package com.socgen.project1;
 
+import java.util.List;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -11,7 +16,17 @@ public class User {@javax.persistence.Id @GeneratedValue
 	private Integer Id;
 	private String username;
 	private String email;
+	@ManyToMany(targetEntity=Skills.class)
 	
+	private List skills;
+	
+	
+	public List getSkills() {
+		return skills;
+	}
+	public void setSkills(List skills) {
+		this.skills = skills;
+	}
 	@OneToOne
 	private Department dept;
 	

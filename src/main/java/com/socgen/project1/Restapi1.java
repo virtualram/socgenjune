@@ -19,7 +19,7 @@ public class Restapi1 {
 	Userrepository usrrep;
 	
 	@Autowired
-	Userrepository2 usrrep2;
+	Skillrepository skillrep;
 	
 	@Autowired
 	Departmentrepository deptrep;
@@ -35,8 +35,12 @@ public class Restapi1 {
 		usr1.setUsername(usr.getUsername());
 		usr1.setEmail(usr.getEmail());
 		
-         
-		usr1.setDept(deptrep.findByname("Admin"));
+       Department dep = new Department();
+       dep =deptrep.findByname("finance");
+       
+    
+       usr1.setSkills(skillrep.findAll());
+		usr1.setDept(dep);
 		usrrep.save(usr1);
 		return usr1;
 		
@@ -68,5 +72,13 @@ public class Restapi1 {
 		return dept;
 		
 	}
+	@RequestMapping(value = "/createskill",method=RequestMethod.POST, headers = "Accept=application/json"  )
+	public Skills createskill(@RequestBody Skills skills) {
+		
+		skillrep.save(skills);
+		return skills;
+		
+	}
+
 
 }
