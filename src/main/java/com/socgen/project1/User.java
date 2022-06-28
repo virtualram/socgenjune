@@ -2,6 +2,7 @@ package com.socgen.project1;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -10,7 +11,17 @@ public class User {@javax.persistence.Id @GeneratedValue
 	private Integer Id;
 	private String username;
 	private String email;
-  public Integer getId() {
+	
+	@OneToOne
+	private Department dept;
+	
+  public Department getDept() {
+		return dept;
+	}
+	public void setDept(Department dept) {
+		this.dept = dept;
+	}
+public Integer getId() {
 	return Id;
 }
 public void setId(Integer id) {

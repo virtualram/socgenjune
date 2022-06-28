@@ -21,6 +21,9 @@ public class Restapi1 {
 	@Autowired
 	Userrepository2 usrrep2;
 	
+	@Autowired
+	Departmentrepository deptrep;
+	
 	@GetMapping("/hello")
 	public String hello(@RequestParam(value = "name", defaultValue = "World") String name) {
 	return String.format("Hello %s!", name);
@@ -31,6 +34,9 @@ public class Restapi1 {
 		User usr1  = new User();
 		usr1.setUsername(usr.getUsername());
 		usr1.setEmail(usr.getEmail());
+		
+         
+		usr1.setDept(deptrep.findByname("Admin"));
 		usrrep.save(usr1);
 		return usr1;
 		
@@ -54,5 +60,13 @@ public class Restapi1 {
 		
 	}
 
+	
+	@RequestMapping(value = "/createdept",method=RequestMethod.POST, headers = "Accept=application/json"  )
+	public Department createdept(@RequestBody Department dept) {
+		
+		deptrep.save(dept);
+		return dept;
+		
+	}
 
 }
