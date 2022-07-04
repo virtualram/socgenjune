@@ -5,17 +5,19 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SubComponent } from './sub/sub.component';
 import { NgModel } from '@angular/forms';
-import { FormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { Form1Component } from './form1/form1.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SubComponent
+    SubComponent,
+    Form1Component
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,ReactiveFormsModule
 
   ],
   providers: [],
