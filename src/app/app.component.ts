@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SubComponent } from './sub/sub.component';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'component';
+  title2 = 'Welcome to angular training'
+ flag:boolean = false;
+
+ method1(){
+     this.flag = (this.flag === false?true:false);
+ }
 }
