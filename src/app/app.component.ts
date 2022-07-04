@@ -1,5 +1,8 @@
-import { Component } from '@angular/core';
+import { Component ,Input} from '@angular/core';
 import { SubComponent } from './sub/sub.component';
+import { Customer } from './Customer';
+import { NgModel } from '@angular/forms';
+
 
 @Component({
   selector: 'app-root',
@@ -7,11 +10,22 @@ import { SubComponent } from './sub/sub.component';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'component';
+  @Input() title:String = 'component';
   title2 = 'Welcome to angular training'
  flag:boolean = false;
+ currentCustomer:Customer;
+ items:any
+ constructor(){
+  this.currentCustomer = new Customer();
+  this.currentCustomer.firstname ='NAren';
+  this.items = {name:'laptop',price:10000};
 
- method1(){
-     this.flag = (this.flag === false?true:false);
  }
+
+ method1(x:String){
+     this.flag = (this.flag === false?true:false);
+     console.log(x)
+      console.log(this.items);
+ }
+ 
 }
