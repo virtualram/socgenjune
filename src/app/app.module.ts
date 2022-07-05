@@ -7,7 +7,7 @@ import { SubComponent } from './sub/sub.component';
 import { NgModel } from '@angular/forms';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { Form1Component } from './form1/form1.component';
-
+import { HttpClient, HttpClientModule   } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,8 +17,8 @@ import { Form1Component } from './form1/form1.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,ReactiveFormsModule
-
+    FormsModule,ReactiveFormsModule,
+    HttpClientModule  
   ],
   providers: [],
   bootstrap: [AppComponent]
