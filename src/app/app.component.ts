@@ -3,6 +3,8 @@ import { SubComponent } from './sub/sub.component';
 import { Customer } from './Customer';
 import { NgModel } from '@angular/forms';
 
+//Developer 1 has made the change 1
+
 
 @Component({
   selector: 'app-root',
