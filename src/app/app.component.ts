@@ -4,6 +4,7 @@ import { Customer } from './Customer';
 import { NgModel } from '@angular/forms';
 
 //Developer 1 has made the change 1
+//Developer 2 has made the change 2
 
 
 @Component({
